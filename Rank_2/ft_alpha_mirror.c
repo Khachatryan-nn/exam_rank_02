@@ -14,11 +14,12 @@
 
 static int	ft_isalpha(char c)
 {
-	if (c >= 'a' && a <= 'z')
+	if (c >= 'a' && c <= 'z')
 		return (1);
 	else if (c >= 'A' && c <= 'Z')
-		return (1);
+		return (2);
 	return (0);
+}
 
 int	main(int argv, char **argc)
 {
@@ -29,5 +30,13 @@ int	main(int argv, char **argc)
 	{
 		while (argc[1][i])
 		{
-			if (ft_isalpha(argc[1][i]))
-				argc[1][i] += 109 - argc[1][i];
+			if (ft_isalpha(argc[1][i]) == 1)
+				argc[1][i] = 109 - argc[1][i] + 110;
+			else if (ft_isalpha(argc[1][i]) == 2)
+				argc[1][i] = 77 - argc[1][i] + 78;
+			write (1, &argc[1][i++], 1);
+		}
+	}
+	write (1, "\n", 1);
+	return (0);
+}
