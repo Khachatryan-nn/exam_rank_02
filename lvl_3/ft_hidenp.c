@@ -1,32 +1,38 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_list_size.c                                     :+:      :+:    :+:   */
+/*   ft_hidenp.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: tikhacha <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/03/22 18:55:12 by tikhacha          #+#    #+#             */
-/*   Updated: 2023/03/22 19:27:25 by tikhacha         ###   ########.fr       */
+/*   Created: 2023/03/22 19:18:23 by tikhacha          #+#    #+#             */
+/*   Updated: 2023/03/22 19:23:09 by tikhacha         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdio.h>
+#include <unistd.h>
 
-int	ft_list_size(t_list *begin_list)
+int	main(int argv, char **argc)
 {
 	int	i;
-	t_list	*temp;
+	int	j;
 
 	i = 0;
-	temp = begin_list;
-	while (temp->next != NULL)
+	j = 0;
+	if (argv == 3)
 	{
-		i++;
-		temp = temp->next;
+		while (argc[1][i])
+		{
+			while (argc[1][i] != argc[2][j] && argc[2][j])
+				j++;
+			if (argc[2][j] == '\0' && argc[1][i] != '\0')
+			{
+				write (1, "0\n", 2);
+				return (0);
+			}
+			i++;
+		}
+		write (1, "1", 1);
 	}
-	return (i);
+	write (1, "\n", 1);
 }
-
-int	main(void)
-{
-

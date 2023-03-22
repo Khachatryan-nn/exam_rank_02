@@ -1,32 +1,24 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_list_size.c                                     :+:      :+:    :+:   */
+/*   ft_lcm.c                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: tikhacha <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/03/22 18:55:12 by tikhacha          #+#    #+#             */
-/*   Updated: 2023/03/22 19:27:25 by tikhacha         ###   ########.fr       */
+/*   Created: 2023/03/22 19:31:27 by tikhacha          #+#    #+#             */
+/*   Updated: 2023/03/22 19:48:03 by tikhacha         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stdio.h>
 
-int	ft_list_size(t_list *begin_list)
+unsigned int	hcf(unsigned int a, unsigned int b)
 {
-	int	i;
-	t_list	*temp;
+	int	a;
 
-	i = 0;
-	temp = begin_list;
-	while (temp->next != NULL)
-	{
-		i++;
-		temp = temp->next;
-	}
-	return (i);
-}
+	a = 0;
+	while (a / 2)
 
-int	main(void)
+unsigned int	lcm(unsigned int a, unsigned int b)
 {
 
