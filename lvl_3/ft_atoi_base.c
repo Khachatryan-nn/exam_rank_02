@@ -19,10 +19,10 @@ int	ft_atoi_base(const char *str, int str_base)
 	int counter;
 
 	i = 0;
-	sign = -1;
+	sign = 1;
 	counter = 0;
 	if (str[i] == '-')
-		sign = ++i;
+		sign = 0 - ++i;
 	while (str[i])
 	{
 		counter *= str_base;
@@ -34,7 +34,7 @@ int	ft_atoi_base(const char *str, int str_base)
 			counter += str[i] - '0';
 		i++;
 	}
-	return (counter * (-1 * sign));
+	return (counter * sign);
 }
 
 int	main(int argv, char **argc)
